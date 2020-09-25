@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-warning">
+
+
+		<a class="navbar-brand"> <img src="img/logo.png" height="48px"
+			width="40px" class="rounded-circle z-depth-0" alt="avatar image">
+		</a>
+
+
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarSupportedContent-555"
+			aria-controls="navbarSupportedContent-555" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse " id="navbarSupportedContent-555">
+			<ul class="navbar-nav  " style="margin-left: 262px">
+				<li class="nav-item "><a class="nav-link pl-4" href="#About">About</a>
+				</li>
+				<li class="nav-item"><a class="nav-link pl-4" href="#Skills">Skills</a>
+				</li>
+				<li class="nav-item"><a class="nav-link pl-4" href="#Resume">Resume</a>
+				</li>
+				<li class="nav-item"><a class="nav-link pl-4" href="#Projects">Projects</a>
+				</li>
+				<li class="nav-item"><a class="nav-link pl-4" href="#Contact">Contact</a>
+				</li>
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle pl-4"
+					id="navbarDropdownMenuLink-555" data-toggle="dropdown"
+					aria-haspopup="true" aria-expanded="false">Social Network </a>
+					<div class="dropdown-menu dropdown-secondary"
+						aria-labelledby="navbarDropdownMenuLink-555">
+						<a class="dropdown-item" href="#"> <img
+							src="https://img.icons8.com/metro/50/000000/linkedin.png"
+							height="28px" width="30px" /> LinkedIn
+						</a> <a class="dropdown-item" href="#"> <img
+							src="https://img.icons8.com/fluent/50/000000/github.png"
+							height="28px" width="30px" /> GitHub
+						</a> <a class="dropdown-item" href="#"> <img
+							src="https://img.icons8.com/ios/50/000000/gitlab.png"
+							height="28px" width="30px" /> GitLab
+						</a> <a class="dropdown-item" href="#"> <img
+							src="https://img.icons8.com/ios-filled/50/000000/codepen.png"
+							height="28px" width="30px" /> CodePen
+						</a> <a class="dropdown-item" href="#"> <img
+							src="https://img.icons8.com/android/24/000000/facebook-new.png"
+							height="28px" width="30px" /> Facebook
+						</a> <a class="dropdown-item" href="#"> <img
+							src="https://img.icons8.com/ios-filled/50/000000/google-plus-circled.png"
+							height="28px" width="30px" /> Google+
+						</a>
+
+
+					</div></li>
+			</ul>
+			<ul class="navbar-nav ml-auto nav-flex-icons">
+				<li class="nav-item"><a
+					class="nav-link waves-effect waves-light" href="#">1 <i
+						class="fas fa-envelope"></i>
+				</a></li>
+				<li class="nav-item avatar dropdown"><a
+					class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55"
+					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<img src="img/profile.png" height="28px" width="30px"
+						class="rounded-circle z-depth-0" alt="avatar image">
+				</a>
+					<div
+						class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
+						aria-labelledby="navbarDropdownMenuLink-55">
+						<a class="dropdown-item" href="#">Contact me on linkedIn<img
+							src="https://img.icons8.com/metro/50/000000/linkedin.png"
+							height="28px" width="30px" class="pl-2" />
+						</a> <a class="dropdown-item" href="#">Contact me on Gmail &nbsp;
+							&nbsp;<img
+							src="https://img.icons8.com/material-sharp/24/000000/gmail-login.png"
+							height="28px" width="30px" />
+						</a>
+
+					</div></li>
+			</ul>
+		</div>
+	</nav>
+
+
+	<div class="container">
+		<h1 align="center">List of countries</h1>
+
+
+
+
+
+
+
+
+
+
+
+		<div class="row">
+			<div class="col-sm-6 col-md-6 col-lg-3 pt-2"
+				th:each="product : ${listProduct}">
+				<div class="card">
+					<div class="card-body">
+						<h6 th:text="'Marque :' + ${product.marque}"></h6>
+						<h6 th:text="'Nom d apparail :' + ${product.name}"></h6>
+						<h6 th:text="'Coleur :' + ${product.color}"></h6>
+						<h6 th:text="'Prix :' + ${product.price}"></h6>
+						<a href="#" class="btn btn-primary">Show more</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div style="padding-top: 200px;">
+			<table border="1" class="table table-striped table-responsive-md ">
+
+				<thead>
+					<tr>
+						<th>Marque</th>
+						<th>Nom d'apparail</th>
+						<th>Coleur</th>
+						<th>Prix</th>
+						<th>Quantite</th>
+						<th>Image</th>
+						<th>Update</th>
+						<th>Delete</th>
+					</tr>
+
+
+				</thead>
+
+
+
+				<tbody>
+					<tr th:each="product : ${listProduct}">
+
+						<td th:text="${product.marque}"></td>
+						<td th:text="${product.name}"></td>
+						<td th:text="${product.color}"></td>
+						<td th:text="${product.price}"></td>
+						<td th:text="${product.qte}"></td>
+						<td th:text="${product.img}"></td>
+						<td><a th:href="@{/showUpdateForm/{id}(id=${product.id})}"
+							class="btn btn-warning"> Update</a></td>
+							
+						<td><a th:href="@{/deleteProduct/{id}(id=${product.id})}"
+							class="btn btn-danger">Delete</a></td>
+
+					</tr>
+
+				</tbody>
+			</table>
+
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+		<!-- jQuery library -->
+		<script
+			src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+		<script
+			src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

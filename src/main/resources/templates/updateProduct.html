@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Shoping |Update Product</title>
+</head>
+<body>
+	<nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-warning">
+
+
+		<a class="navbar-brand"> <img src="img/logo.png" height="48px"
+			width="40px" class="rounded-circle z-depth-0" alt="avatar image">
+		</a>
+
+
+
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarSupportedContent-555"
+			aria-controls="navbarSupportedContent-555" aria-expanded="false"
+			aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse " id="navbarSupportedContent-555">
+			<ul class="navbar-nav  " style="margin-left: 262px">
+				<li class="nav-item "><a class="nav-link pl-4" href="#About">About</a>
+				</li>
+				<li class="nav-item"><a class="nav-link pl-4" href="#Skills">Skills</a>
+				</li>
+				<li class="nav-item"><a class="nav-link pl-4" href="#Resume">Resume</a>
+				</li>
+				<li class="nav-item"><a class="nav-link pl-4" href="#Projects">Projects</a>
+				</li>
+				<li class="nav-item"><a class="nav-link pl-4" href="#Contact">Contact</a>
+				</li>
+				<li class="nav-item dropdown"><a
+					class="nav-link dropdown-toggle pl-4"
+					id="navbarDropdownMenuLink-555" data-toggle="dropdown"
+					aria-haspopup="true" aria-expanded="false">Social Network </a>
+					<div class="dropdown-menu dropdown-secondary"
+						aria-labelledby="navbarDropdownMenuLink-555">
+						<a class="dropdown-item" href="#"> <img
+							src="https://img.icons8.com/metro/50/000000/linkedin.png"
+							height="28px" width="30px" /> LinkedIn
+						</a> <a class="dropdown-item" href="#"> <img
+							src="https://img.icons8.com/fluent/50/000000/github.png"
+							height="28px" width="30px" /> GitHub
+						</a> <a class="dropdown-item" href="#"> <img
+							src="https://img.icons8.com/ios/50/000000/gitlab.png"
+							height="28px" width="30px" /> GitLab
+						</a> <a class="dropdown-item" href="#"> <img
+							src="https://img.icons8.com/ios-filled/50/000000/codepen.png"
+							height="28px" width="30px" /> CodePen
+						</a> <a class="dropdown-item" href="#"> <img
+							src="https://img.icons8.com/android/24/000000/facebook-new.png"
+							height="28px" width="30px" /> Facebook
+						</a> <a class="dropdown-item" href="#"> <img
+							src="https://img.icons8.com/ios-filled/50/000000/google-plus-circled.png"
+							height="28px" width="30px" /> Google+
+						</a>
+
+
+					</div></li>
+			</ul>
+			<ul class="navbar-nav ml-auto nav-flex-icons">
+				<li class="nav-item"><a
+					class="nav-link waves-effect waves-light" href="#">1 <i
+						class="fas fa-envelope"></i>
+				</a></li>
+				<li class="nav-item avatar dropdown"><a
+					class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-55"
+					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<img src="img/profile.png" height="28px" width="30px"
+						class="rounded-circle z-depth-0" alt="avatar image">
+				</a>
+					<div
+						class="dropdown-menu dropdown-menu-lg-right dropdown-secondary"
+						aria-labelledby="navbarDropdownMenuLink-55">
+						<a class="dropdown-item" href="#">Contact me on linkedIn<img
+							src="https://img.icons8.com/metro/50/000000/linkedin.png"
+							height="28px" width="30px" class="pl-2" />
+						</a> <a class="dropdown-item" href="#">Contact me on Gmail &nbsp;
+							&nbsp;<img
+							src="https://img.icons8.com/material-sharp/24/000000/gmail-login.png"
+							height="28px" width="30px" />
+						</a>
+
+					</div></li>
+			</ul>
+		</div>
+	</nav>
+
+	<h1 align="center">Update Product</h1>
+
+
+	<div class="container">
+
+
+
+	
+
+<form action="#" th:action="@{/saveProduct}" th:object="${product}"
+			method="POST">
+		<div> 
+		<input type="hidden" th:field="*{id}" />
+			<label for="Marque" class="col-sm-2 col-form-label">Marque</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="Marque" th:field="*{marque}">
+			</div>
+
+			<label for="Nom" class="col-sm-2 col-form-label">Nom
+				d'apparail</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="Nom" th:field="*{name}">
+			</div>
+
+			<label for="Color" class="col-sm-2 col-form-label">Color</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="Color" th:field="*{color}">
+			</div>
+
+
+
+			<label for="Prix" class="col-sm-2 col-form-label">Prix</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="Prix" th:field="*{price}">
+			</div>
+
+			<label for="Qte" class="col-sm-2 col-form-label">Quantite</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="Qte"th:field="*{qte}">
+			</div>
+
+			<label for="upload" class="col-sm-2 col-form-label">Upload
+				Picture</label>
+			<div class="col-sm-10">
+				<input type="file" class="form-control-file" id="upload">
+			</div>
+		
+						<div class="col-sm-10" style="text-align: center">
+				<button type="submit" class="btn btn-primary">Poster le
+					produits</button>
+			</div>
+		</div>
+
+
+</form>		
+
+		
+
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</div>
+
+
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet"
+		href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
